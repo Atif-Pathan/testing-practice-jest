@@ -44,5 +44,29 @@ const calculator = {
     }
 };
 
+function caesarCipher(string, shift) {
+    const arr = string.split('');
+    let newStr = '';
+    arr.forEach((char) => {
+      if (char === ' ') {
+        newStr += ' ';
+      } else if (char >= 'a' && char <= 'z') {
+        // Handle lowercase letters
+        let shifted = ((char.charCodeAt(0) - 97 + shift) % 26);
+        if (shifted < 0) shifted += 26; // Handle negative shifts
+        newStr += String.fromCharCode(shifted + 97);
+      } else if (char >= 'A' && char <= 'Z') {
+        // Handle uppercase letters
+        let shifted = ((char.charCodeAt(0) - 65 + shift) % 26);
+        if (shifted < 0) shifted += 26; // Handle negative shifts
+        newStr += String.fromCharCode(shifted + 65);
+      } else {
+        // Non-alphabetic characters
+        newStr += char;
+      }
+    });
+    return newStr;
+}
 
-module.exports = { capitalize, reverseString, calculator };
+
+module.exports = { capitalize, reverseString, calculator, caesarCipher };
