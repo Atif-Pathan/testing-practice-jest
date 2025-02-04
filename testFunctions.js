@@ -68,5 +68,14 @@ function caesarCipher(string, shift) {
     return newStr;
 }
 
+function analyzeArray(array) {
+  return {
+    average: Math.round((array.reduce((sum, currentVal) => sum + currentVal, 0)/array.length) * 100000) / 100000,
+    min: Math.min(...array),
+    max: Math.max(...array),
+    length: array.length
+ }
+}
 
-module.exports = { capitalize, reverseString, calculator, caesarCipher };
+
+module.exports = { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

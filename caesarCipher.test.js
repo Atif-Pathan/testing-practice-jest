@@ -94,5 +94,5 @@ test('test mixed case with large shift', () => {
 });
 
 test('test mixed case with large negative shift', () => {
-    expect(caesarCipher('HeLLo', -30)).toEqual('DaHHk');
+    expect(caesarCipher('HeeLLo', -30)).toEqual('DaaHHk');
 });
